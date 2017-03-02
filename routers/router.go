@@ -9,6 +9,6 @@ import (
 func init() {
 	beego.Router("/", &controllers.MainController{}, "get:Login")
 	beego.Router("/home", &controllers.MainController{}, "get:Home")
-	beego.Router("/verify", &controllers.CaptchaController{}, "get:VerifyCaptcha")
+	beego.Router("/verify", &controllers.CaptchaController{}, "post:VerifyCaptcha")
 	beego.Handler("/captcha/*.png", captcha.Server(240, 80))
 }
